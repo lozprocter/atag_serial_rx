@@ -47,7 +47,7 @@ serial_obj_1 = establish_connection("ttyACM0")
 serial_obj_2 = establish_connection("ttyACM1")
 serial_obj_3 = establish_connection("ttyACM2")
 
-sleep(1)
+sleep(5)
 
 serial_obj_1.flushInput()
 serial_obj_2.flushInput()

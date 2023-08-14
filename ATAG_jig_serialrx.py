@@ -40,13 +40,13 @@ def receiver(serial_obj):
         rec_temp = serial_obj.readline().decode('utf-8').upper().strip()
         return rec_temp
         
-serial_obj_1 = establish_connection("")
+serial_obj_1 = establish_connection("ttyACM0")
 print(serial_obj_1)
 
-serial_obj_2 = establish_connection("")
+serial_obj_2 = establish_connection("ttyACM1")
 print(serial_obj_2)
 
-serial_obj_3 = establish_connection("")
+serial_obj_3 = establish_connection("ttyACM2")
 print(serial_obj_3)
 
 serial_obj_1.flushInput()

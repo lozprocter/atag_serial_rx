@@ -51,18 +51,18 @@ serial_obj_2.flushInput()
 serial_obj_3.flushInput()
 
 while True:
-    with open("ATAG_CABLE_RESULTS.txt", "a") as f:
+    with open("ATAG_CABLE_RESULTS_1.txt", "a") as f:
         line = receiver(serial_obj_1)
         if line:
             f.write(str(line))
             print(line)
         
-    with open("ATAG_CABLE_RESULTS.txt", "a") as f:
+    with open("ATAG_CABLE_RESULTS_2.txt", "a") as f:
         line = receiver(serial_obj_2)
         if line:
             f.write(str(line))
             print(line)
-    with open("ATAG_CABLE_RESULTS.txt", "a") as f:
+    with open("ATAG_CABLE_RESULTS_3.txt", "a") as f:
         line = receiver(serial_obj_3)
         if line:
             f.write(str(line))

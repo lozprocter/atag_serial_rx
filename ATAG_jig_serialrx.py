@@ -1,12 +1,16 @@
+#LIBS
 import serial, sys
 from os import listdir
+from gpiozero import Button
+import threading
 
+#VARIABLES
+run_counter = 0
 BAUD_RATE = 9600
 
 def establish_connection(port):
     
     try:
-
         filesForDevice = listdir('/dev/') # put all device files into list[]
 
         for line in filesForDevice: # run through all files
@@ -36,7 +40,6 @@ def receiver(serial_obj):
         rec_temp = serial_obj.readline().decode('utf-8').upper().strip()
         return rec_temp
         
-        
 serial_obj_1 = establish_connection("")
 print(serial_obj_1)
 
@@ -50,20 +53,32 @@ serial_obj_1.flushInput()
 serial_obj_2.flushInput()
 serial_obj_3.flushInput()
 
+def run_timing():
+    run_prompt = Button(1)
+    button.wait_for_press()
+    run_counter += 1
+    
+t = threading.Thread(target = run_timing)
+t.daemon = True
+t.start()
+
 while True:
     with open("ATAG_CABLE_RESULTS_1.txt", "a") as f:
         line = receiver(serial_obj_1)
         if line:
-            f.write(str(line))
+            f.write(str(line) + str(f"Run: {run_counter}"))
+            print(f"RUN: {run_counter}")
             print(line)
         
     with open("ATAG_CABLE_RESULTS_2.txt", "a") as f:
         line = receiver(serial_obj_2)
         if line:
-            f.write(str(line))
+            f.write(str(line) + str(f"Run: {run_counter}"))
+            print(f"RUN: {run_counter}")
             print(line)
     with open("ATAG_CABLE_RESULTS_3.txt", "a") as f:
         line = receiver(serial_obj_3)
         if line:
-            f.write(str(line))
+            f.write(str(line) + str(f"Run: {run_counter}"))
+            print(f"RUN: {run_counter}")
             print(line)

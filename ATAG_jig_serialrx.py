@@ -27,6 +27,9 @@ def establish_connection(port):
             # if (line[:6] == 'ttyUSB' or line[:6] == 'ttyACM'): # look for prefix of known success (covers both Mega and Uno)
             # OR: UART Comms hardware
             elif line[:7] == port: # looks specifically for USB port that encoder is plugged into
+                
+                print(port)
+                
                 devicePort = line # take whole line (includes suffix address e.g. ttyACM0
                 e = serial.Serial('/dev/' + str(devicePort), BAUD_RATE, timeout = 6, writeTimeout = 20) # assign
                 

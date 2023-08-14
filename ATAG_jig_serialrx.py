@@ -4,6 +4,7 @@ from os import listdir
 from gpiozero import Button
 import threading
 from traceback import format_exc
+from time import sleep
 
 #VARIABLES
 run_counter = 0
@@ -45,6 +46,8 @@ def receiver(serial_obj):
 serial_obj_1 = establish_connection("ttyACM0")
 serial_obj_2 = establish_connection("ttyACM1")
 serial_obj_3 = establish_connection("ttyACM2")
+
+sleep(1)
 
 serial_obj_1.flushInput()
 serial_obj_2.flushInput()

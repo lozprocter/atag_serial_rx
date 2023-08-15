@@ -66,17 +66,17 @@ while True:
     with open("ATAG_CABLE_RESULTS_1.txt", "a") as f:
         line = receiver(serial_obj_1)
         if line:
-            f.write(str(line) + str(f"Run: {run_counter}\n"))
+            f.write(str(line) + str(f" Run: {run_counter}\n"))
             print(f"RUN: {run_counter} {line}")
         
     with open("ATAG_CABLE_RESULTS_2.txt", "a") as f:
         line = receiver(serial_obj_2)
         if line:
-            f.write(str(line) + str(f"Run: {run_counter}\n"))
+            f.write(str(line) + str(f" Run: {run_counter}\n"))
             print(f"RUN: {run_counter} {line}")
   
     with open("ATAG_CABLE_RESULTS_3.txt", "a") as f:
         line = receiver(serial_obj_3)
         if line:
-            f.write(str(line) + str(f"Run: {run_counter}\n"))
+            f.write(str(line) + str(f" Run: {run_counter}\n"))
             print(f"RUN: {run_counter} {line}")

@@ -54,7 +54,7 @@ serial_obj_2.flushInput()
 serial_obj_3.flushInput()
 
 def run_timing():
-    run_prompt = Button(1)
+    run_prompt = Button(2)
     run_prompt.wait_for_press()
     run_counter += 1
     

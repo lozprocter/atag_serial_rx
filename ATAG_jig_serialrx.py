@@ -53,7 +53,10 @@ serial_obj_1.flushInput()
 serial_obj_2.flushInput()
 serial_obj_3.flushInput()
 
+
+
 def run_timing():
+    global run_counter
     run_counter = 0
     run_prompt = Button(2)
     while True:
@@ -67,6 +70,7 @@ t.daemon = True
 t.start()
 
 while True:
+    
     with open("ATAG_CABLE_RESULTS_1.txt", "a") as f:
         line = receiver(serial_obj_1)
         if line:

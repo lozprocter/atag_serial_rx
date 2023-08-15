@@ -9,7 +9,6 @@ from time import sleep
 #VARIABLES
 run_counter = 0
 BAUD_RATE = 9600
-e = 0
 
 def establish_connection(port):
     

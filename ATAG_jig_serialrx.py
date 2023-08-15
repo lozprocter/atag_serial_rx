@@ -57,8 +57,9 @@ def run_timing():
     run_counter = 0
     run_prompt = Button(2)
     while True:
-        run_prompt.wait_for_press()
+        run_prompt.wait_for_release()
         run_counter += 1
+        sleep(2)
     
 t = threading.Thread(target = run_timing)
 t.daemon = True

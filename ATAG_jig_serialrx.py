@@ -59,6 +59,7 @@ def run_timing():
     while True:
         run_prompt.wait_for_release()
         run_counter += 1
+        print(run_counter)
         sleep(2)
     
 t = threading.Thread(target = run_timing)
